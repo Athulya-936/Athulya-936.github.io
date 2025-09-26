@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athulya's Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-navy': '#1E293B',
+                        'secondary-gray': '#F8FAFC',
+                        'accent-orange': '#FB923C',
+                        'supporting-white': '#FFFFFF',
+                        'supporting-gray': '#64748B',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .animated-gradient {
+            background-size: 200% 200%;
+            animation: gradient-animation 4s ease infinite;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .typing-effect::after {
+            content: '|';
+            animation: blink-caret 1s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: currentColor; }
+        }
+    </style>
+</head>
+<body class="bg-secondary-gray text-primary-navy font-sans">
+
+    <!-- Sticky Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md rounded-b-xl">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold">Athulya Majinu</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="hover:text-accent-orange transition-colors duration-300">About</a>
+                <a href="#projects" class="hover:text-accent-orange transition-colors duration-300">Projects</a>
+                <a href="#contact" class="hover:text-accent-orange transition-colors duration-300">Contact</a>
+                <a href="/athulya_resume.pdf" class="bg-accent-orange hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300" download>
+                    Download Resume
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-primary-navy focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4 transition-all duration-300 ease-in-out">
+            <a href="#about" class="block py-2 px-6 hover:bg-gray-100">About</a>
+            <a href="#projects" class="block py-2 px-6 hover:bg-gray-100">Projects</a>
+            <a href="#contact" class="block py-2 px-6 hover:bg-gray-100">Contact</a>
+            <a href="/athulya_resume.pdf" class="block py-2 px-6 hover:bg-gray-100">Download Resume</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-20 lg:py-32 text-center container mx-auto px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-navy mb-4 leading-tight">
+                <span id="hero-name">Athulya Majinu</span>,
+                <br class="hidden sm:block">
+                <span id="typing-text" class="text-transparent bg-clip-text animated-gradient bg-gradient-to-r from-accent-orange to-purple-500 font-bold"></span>
+            </h1>
+            <p class="text-lg md:text-xl text-supporting-gray mb-8 max-w-2xl mx-auto">
+                I'm a passionate full-stack developer who loves turning wild ideas into pixel-perfect reality.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#projects" class="bg-accent-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-105">
+                    View My Work
+                </a>
+                <a href="#contact" class="bg-white border-2 border-primary-navy text-primary-navy font-bold py-3 px-8 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-105">
+                    Let's Build Something
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white rounded-xl shadow-lg m-4 sm:m-8 lg:m-12">
+        <div class="container mx-auto px-6 lg:px-8">
+            <h2 class="text-center text-3xl font-bold text-primary-navy mb-12">The Human Behind the Code</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <img src="https://placehold.co/300x300/64748B/FFFFFF?text=Athulya" alt="A professional headshot of Athulya Majinu" class="rounded-full shadow-lg w-48 h-48 sm:w-64 sm:h-64 object-cover border-4 border-accent-orange">
+                </div>
+                <div class="w-full md:w-2/3 space-y-6">
+                    <p class="text-supporting-gray text-lg leading-relaxed">
+                        Hey there! I'm Athulya– a passionate full-stack developer who loves turning wild ideas into pixel-perfect reality. Currently crushing my BTech (Class of 2028), but I've been coding since before it was cool to have "developer" in your bio.
+                    </p>
+                    <p class="text-supporting-gray text-lg leading-relaxed">
+                        My superpower? Building seamless web experiences that make users go "wow, that just works!" From crafting responsive frontends with React and Vue to architecting robust backends with Python and Django, I speak fluent code in multiple dialects.
+                    </p>
+                    <p class="text-supporting-gray text-lg leading-relaxed">
+                        When I'm not debugging at 2 AM (okay, maybe I am), you'll find me exploring the latest web technologies, creating digital designs in Illustrator, or helping teams bring their visions to life through clear communication and solid project management.
+                    </p>
+                    <p class="text-supporting-gray text-lg leading-relaxed">
+                        I believe great software isn't just about clean code – it's about solving real problems for real people. Ready to build something amazing together?
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="mt-20">
+                <h3 class="text-center text-2xl font-bold text-primary-navy mb-8">My Technical Toolbox</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Example Skill Card -->
+                    <div class="bg-secondary-gray p-6 rounded-xl shadow-md text-center transform hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl mb-2 block">🖥️</span>
+                        <h4 class="font-semibold text-lg text-primary-navy">Frontend</h4>
+                        <p class="text-sm text-supporting-gray">HTML, CSS, JavaScript, React, Vue.js</p>
+                    </div>
+                    <div class="bg-secondary-gray p-6 rounded-xl shadow-md text-center transform hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl mb-2 block">⚙️</span>
+                        <h4 class="font-semibold text-lg text-primary-navy">Backend</h4>
+                        <p class="text-sm text-supporting-gray">Python, Django, Node.js, Express</p>
+                    </div>
+                    <div class="bg-secondary-gray p-6 rounded-xl shadow-md text-center transform hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl mb-2 block">💾</span>
+                        <h4 class="font-semibold text-lg text-primary-navy">Databases</h4>
+                        <p class="text-sm text-supporting-gray">SQL, PostgreSQL, MongoDB</p>
+                    </div>
+                    <div class="bg-secondary-gray p-6 rounded-xl shadow-md text-center transform hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl mb-2 block">☁️</span>
+                        <h4 class="font-semibold text-lg text-primary-navy">Tools & Cloud</h4>
+                        <p class="text-sm text-supporting-gray">Git, Docker, AWS, Heroku</p>
+                    </div>
+                    <div class="bg-secondary-gray p-6 rounded-xl shadow-md text-center transform hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl mb-2 block">🎨</span>
+                        <h4 class="font-semibold text-lg text-primary-navy">Design</h4>
+                        <p class="text-sm text-supporting-gray">Illustrator, Figma, UI/UX Principles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 container mx-auto px-6 lg:px-8">
+        <h2 class="text-center text-3xl font-bold text-primary-navy mb-12">From Concept to Code</h2>
+
+        <!-- Featured Project -->
+        <div class="bg-white p-8 rounded-xl shadow-lg mb-12 transform transition-transform duration-300 hover:scale-[1.02]">
+            <h3 class="text-2xl font-bold text-primary-navy mb-4">Featured Build</h3>
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/800x600/64748B/FFFFFF?text=Project+1" alt="Featured Project 1" class="rounded-lg shadow-md w-full h-auto">
+                </div>
+                <div class="md:w-1/2 space-y-4">
+                    <h4 class="text-xl font-semibold text-primary-navy">E-commerce Dashboard</h4>
+                    <p class="text-supporting-gray">A full-stack application built to manage a store's inventory, sales, and customer data. It features a responsive design and real-time data visualization.</p>
+                    <div class="flex flex-wrap gap-2 text-sm">
+                        <span class="bg-accent-orange/20 text-accent-orange font-medium px-2 py-1 rounded-full">React</span>
+                        <span class="bg-accent-orange/20 text-accent-orange font-medium px-2 py-1 rounded-full">Node.js</span>
+                        <span class="bg-accent-orange/20 text-accent-orange font-medium px-2 py-1 rounded-full">Express</span>
+                        <span class="bg-accent-orange/20 text-accent-orange font-medium px-2 py-1 rounded-full">MongoDB</span>
+                    </div>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="bg-primary-navy text-white py-2 px-6 rounded-full shadow-lg transition-transform duration-300 hover:scale-105">Live Demo</a>
+                        <a href="https://github.com/Athulya-936" class="bg-white border-2 border-primary-navy text-primary-navy py-2 px-6 rounded-full shadow-lg transition-transform duration-300 hover:scale-105">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.02] cursor-pointer">
+                <img src="https://placehold.co/600x400/64748B/FFFFFF?text=Project+2" alt="Project 2" class="rounded-lg mb-4">
+                <h4 class="text-lg font-semibold text-primary-navy mb-2">Social Media Platform Clone</h4>
+                <p class="text-sm text-supporting-gray mb-4">Replicated a popular social media site with user authentication, post creation, and real-time updates.</p>
+                <div class="flex flex-wrap gap-2 text-xs mb-4">
+                    <span class="bg-accent-orange/20 text-accent-orange font-medium px-2 py-1 rounded-full">Vue.js</span>
+                    <span class="bg-accent-orange/20 text-accent-orange font-medium px-2 py-1 rounded-full">Firebase</span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-primary-navy hover:text-accent-orange transition-colors">Live Demo</a>
+                    <a href="https://github.com/Athulya-936" class="text-primary-navy hover:text-accent-orange transition-colors">GitHub</a>
+                </div>
+            </div>
+            <!-- Project Card 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.02] cursor-pointer">
+                <img src="https://placehold.co/600x400/64748B/FFFFFF?text=Project+3" alt="Project 3" class="rounded-lg mb-4">
+                <h4 class="text-lg font-semibold text-primary-navy mb-2">Personal Blog Site</h4>
+                <p class="text-sm text-supporting-gray mb-4">A custom-built blog platform with an admin panel for creating and managing posts, using a lightweight backend.</p>
+                <div class="flex flex-wrap gap-2 text-xs mb-4">
+                    <span class="bg-accent-orange/20 text-accent-orange font-medium px-2 py-1 rounded-full">Django</span>
+                    <span class="bg-accent-orange/20 text-accent-orange font-medium px-2 py-1 rounded-full">Python</span>
+                    <span class="bg-accent-orange/20 text-accent-orange font-medium px-2 py-1 rounded-full">Tailwind CSS</span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-primary-navy hover:text-accent-orange transition-colors">Live Demo</a>
+                    <a href="https://github.com/Athulya-936" class="text-primary-navy hover:text-accent-orange transition-colors">GitHub</a>
+                </div>
+            </div>
+             <!-- Project Card 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.02] cursor-pointer">
+                <img src="https://placehold.co/600x400/64748B/FFFFFF?text=Project+4" alt="Project 4" class="rounded-lg mb-4">
+                <h4 class="text-lg font-semibold text-primary-navy mb-2">Recipe Finder App</h4>
+                <p class="text-sm text-supporting-gray mb-4">An application that allows users to search for recipes by ingredients, with dynamic filtering and a clean UI.</p>
+                <div class="flex flex-wrap gap-2 text-xs mb-4">
+                    <span class="bg-accent-orange/20 text-accent-orange font-medium px-2 py-1 rounded-full">React</span>
+                    <span class="bg-accent-orange/20 text-accent-orange font-medium px-2 py-1 rounded-full">API Integration</span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-primary-navy hover:text-accent-orange transition-colors">Live Demo</a>
+                    <a href="https://github.com/Athulya-936" class="text-primary-navy hover:text-accent-orange transition-colors">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary-navy text-white rounded-xl shadow-lg m-4 sm:m-8 lg:m-12">
+        <div class="container mx-auto px-6 lg:px-8">
+            <h2 class="text-center text-3xl font-bold mb-4">Let's Create Together</h2>
+            <p class="text-center text-lg text-gray-300 mb-12">I'm currently available for new opportunities. Let's connect!</p>
+
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <!-- Contact Form -->
+                <div class="w-full lg:w-1/2 p-8 bg-white/10 rounded-xl">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-200">Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md bg-gray-700 text-white border-transparent focus:ring-accent-orange focus:border-accent-orange">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-200">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md bg-gray-700 text-white border-transparent focus:ring-accent-orange focus:border-accent-orange">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-200">Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md bg-gray-700 text-white border-transparent focus:ring-accent-orange focus:border-accent-orange"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-accent-orange hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-full transition-colors duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                    <div id="form-message" class="mt-4 text-center hidden"></div>
+                </div>
+
+                <!-- Social Links & Details -->
+                <div class="w-full lg:w-1/2 p-8 lg:p-0">
+                    <h3 class="text-2xl font-bold mb-4">Let's Connect</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl">📧</span>
+                            <div>
+                                <p class="text-lg font-semibold">Email</p>
+                                <p id="email-text" class="text-gray-300">athulyamajinuathulyamajinu@gmail.com</p>
+                                <button id="copy-email" class="text-accent-orange hover:underline text-sm focus:outline-none">Copy Email</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl">🔗</span>
+                            <div>
+                                <p class="text-lg font-semibold">Socials</p>
+                                <div class="flex gap-4 mt-2">
+                                    <a href="https://github.com/Athulya-936" class="text-white hover:text-accent-orange transition-colors">
+                                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.865-.013-1.7-2.782.602-3.37-1.34-3.37-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.025 1.531 1.025.892 1.529 2.341 1.085 2.91.829.091-.64.351-1.085.636-1.336-2.22-.25-4.555-1.11-4.555-4.942 0-1.093.39-1.988 1.029-2.681-.103-.252-.446-1.27-.099-2.648 0 0 .84-.269 2.75 1.024A9.155 9.155 0 0112 5.05c.85.004 1.705.118 2.504.337 1.909-1.293 2.747-1.024 2.747-1.024.346 1.378.003 2.396-.099 2.648.64.693 1.029 1.588 1.029 2.681 0 3.841-2.339 4.681-4.569 4.931.359.309.678.915.678 1.846 0 1.336-.012 2.411-.012 2.73 0 .267.18.579.688.481A10.038 10.038 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                                        <span class="sr-only">GitHub</span>
+                                    </a>
+                                    <a href="#" class="text-white hover:text-accent-orange transition-colors">
+                                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.765s.784-1.765 1.75-1.765 1.75.79 1.75 1.765-.783 1.765-1.75 1.765zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" /></svg>
+                                        <span class="sr-only">LinkedIn</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-sm text-supporting-gray">
+        <p>&copy; 2024 Athulya Majinu. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const typingTextElement = document.getElementById('typing-text');
+            const heroNameElement = document.getElementById('hero-name');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const copyEmailButton = document.getElementById('copy-email');
+            const emailText = document.getElementById('email-text');
+            const form = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+
+            // Hero section typing effect
+            const titles = ["Full-Stack Developer", "Digital Problem Solver", "Crafting Web Experiences"];
+            let titleIndex = 0;
+            let charIndex = 0;
+
+            function type() {
+                if (charIndex < titles[titleIndex].length) {
+                    typingTextElement.textContent += titles[titleIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, 100);
+                } else {
+                    setTimeout(erase, 2000);
+                }
+            }
+
+            function erase() {
+                if (charIndex > 0) {
+                    typingTextElement.textContent = titles[titleIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(erase, 50);
+                } else {
+                    titleIndex = (titleIndex + 1) % titles.length;
+                    setTimeout(type, 500);
+                }
+            }
+
+            // Start the typing effect after a brief delay
+            setTimeout(type, 1000);
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Contact form submission
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                console.log("Form data submitted:", data);
+                
+                formMessage.classList.remove('hidden');
+                formMessage.classList.remove('text-red-500');
+                formMessage.classList.add('text-green-500');
+                formMessage.textContent = "Thank you for your message! I'll get back to you soon.";
+                
+                form.reset();
+            });
+
+            // Copy email to clipboard
+            copyEmailButton.addEventListener('click', () => {
+                const email = emailText.textContent;
+                const tempInput = document.createElement('input');
+                tempInput.value = email;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                    copyEmailButton.textContent = "Copied!";
+                    setTimeout(() => {
+                        copyEmailButton.textContent = "Copy Email";
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                }
+                document.body.removeChild(tempInput);
+            });
+        });
+    </script>
+</body>
+</html>
